@@ -122,7 +122,6 @@ def load_data(city, month, day):
         print('Month filtering inactive.')
 
     # filter by day of week if applicable
-    #day = day.lower()[0:3]
     if day != 'all':
         idxday = WEEKDAYS.index(day)
         # filter by day of week to create the new dataframe
@@ -165,8 +164,6 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    # prefStart = df['Start Station'].mode()[0]
-    #print('Most used Start Station:',prefStart)
     prefStart = df['Start Station'].value_counts()
     print('Most used Start Station: "{}" ({} times)'.format(
           prefStart.idxmax(),
@@ -174,8 +171,6 @@ def station_stats(df):
           ) )
 
     # display most commonly used end station
-    #prefEnd = df['End Station'].mode()[0]
-    #print('Most used End Station:',prefEnd)
     prefEnd = df['End Station'].value_counts()
     print('Most used End Station: "{}" ({} times)'.format(
           prefEnd.idxmax(),
@@ -233,7 +228,6 @@ def user_stats(df):
 
     # Display counts of user types
     print('This is how often each User Type has used the service:')
-    #print(df['User Type'].value_counts())
     prettyprint_series(df['User Type'].value_counts())
 
     # Display counts of gender
