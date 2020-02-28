@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+Project create 28th February 2020
 
 ### Project Title
-Replace the Project Title
+Udacity NanoDegree final project submission
 
 ### Description
-Describe what your project is about and what it does
+The project includes mostly a python project which analyses the CSV
+files from https://www.motivateco.com/ containing service usage info from a bike sharing company.
 
 ### Files used
-Include the files used
+bikeshare.py - main python' script.
+readme.txt   - information about credits and used ressources
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Credits got mostly to Udacity :)
 
