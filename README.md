@@ -13,5 +13,5 @@ bikeshare.py - main python' script.
 readme.txt   - information about credits and used ressources
 
 ### Credits
-Credits got mostly to Udacity :)
+Credits go mostly to Udacity :)
 
