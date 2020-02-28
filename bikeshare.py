@@ -1,7 +1,8 @@
 """
 Script file used to launch analysis of bike sharing data
 Udacity Nano Degree
-2020-02-27 # Review #1
+2020-02-29
+v2: improved final point of rubric (was not implemented)
 """
 import time
 import pandas as pd
@@ -252,24 +253,41 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def display_data(df):
+    """Ask the user if he wants to see some of the raw data and continue until he says 'no"."""
+    while True:
+        askUser = input('Do you want to display 5 arbitrary lines of the raw data? (yes/no)   ').lower()
+        if askUser[0] != 'y':  # Anything that does not start with "y" will be considered "no"
+            print("OK you've seen enough apparently. Returning to main loop.")
+            break  # exit WHILE loop
+        else:
+            print("OK: displaying 5 random rows of data")
+            tmpdata = df.sample(5)
+            for idx in range(tmpdata.shape[0]):
+                print("\n>>>>  Sample Nr {} <<<<".format(idx+1))
+                print(tmpdata.iloc[idx])
+
 def prettyprint_series(myseries):
-    idx = 0
-    while idx < myseries.size:
-        print(" - ",myseries.index[idx],':',myseries.values[idx])
-        idx += 1
+    # idx = 0
+    # while idx < myseries.size:
+    #     print(" - ",myseries.index[idx],':',)myseries.values[idx])
+    #     idx += 1
+    for counter, value in enumerate(myseries):
+        print(" - ",myseries.axes[0][counter], ":", value)
 
 def main():
     print('Hello! Let\'s explore some US bikeshare data!')
     while True:
         city, month, day = get_filters()
         # Use following line for test purposes without user interaction
-        # city,month,day = 'chicago','april','all'
+        #city,month,day = 'chicago','april','all'
         df = load_data(city, month, day)
 
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+        display_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
