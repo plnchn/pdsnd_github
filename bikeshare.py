@@ -256,10 +256,8 @@ def user_stats(df):
     print('-'*40)
 
 def prettyprint_series(myseries):
-    idx = 0
-    while idx < myseries.size:
-        print(" - ",myseries.index[idx],':',myseries.values[idx])
-        idx += 1
+    for counter, value in enumerate(myseries):
+        print(" - ",myseries.axes[0][counter], ":", value)
 
 def main():
     print('Hello! Let\'s explore some US bikeshare data!')
