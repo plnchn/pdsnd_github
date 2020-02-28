@@ -41,7 +41,6 @@ def get_filters():
             city = ''  # make empty to provoke WHILE loop iteration
         #else:
         #    # Good this looks like a city for which we have data
-        #    #print('DEBUG: Found city',city) # DEBUG do nothing
 
     # get user input for month (all, january, february, ... , june)
     month = ''
@@ -61,7 +60,6 @@ def get_filters():
             if month not in MONTHS:
                 print('Unknown month',month,'. Leave empty or type "all" if no filtering desired')
                 month = ''  # make empty to provoke WHILE loop iteration
-        #print('DEBUG: Month is',month)
 
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
@@ -81,7 +79,6 @@ def get_filters():
                     day = WEEKDAYS[idxday]
                 else:
                     day = ''  # make empty to provoke WHILE loop iteration
-        #print('DEBUG: Day is',day)
 
     print('-'*40)
     return city, month, day
