@@ -1,5 +1,5 @@
 ### Date created
-Project create 28th February 2020
+Project created 28th February 2020
 
 ### Project Title
 Udacity NanoDegree final project submission
